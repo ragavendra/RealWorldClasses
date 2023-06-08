@@ -1,5 +1,5 @@
 
-public class IAnimal{
+public interface IAnimal{
 
     public int eyesCount { get; set;}
     public int earsCount { get; set;}
