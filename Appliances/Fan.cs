@@ -2,15 +2,17 @@ namespace RealWorldClasses
 {
     class Fan {
 
+        private int _speed;
+
         public bool On { get; set; }
 
-        public int speed {
+        public int Speed {
             get { 
-                return speed; 
+                return _speed; 
             }
             set { 
                 if(value < 100)
-                    speed = value;
+                    _speed = value;
             }
         }
     }

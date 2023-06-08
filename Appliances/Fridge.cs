@@ -1,26 +1,29 @@
 class Fridge
 {
-    public int freezerSize;
+    public int _freezerSize;
 
-    public int coolerSize;
+    public int _coolerSize;
 
-    public int freezerTemp
+    public int _freezerTemp;
+    public int _coolerTemp;
+
+    public int FreezerTemp
     {
-        get { return freezerTemp; }
+        get { return _freezerTemp; }
         set
         {
             if ((value < 0) && (value > -40))
-                freezerTemp = value;
+                _freezerTemp = value;
         }
     }
 
-    public int coolerTemp
+    public int CoolerTemp
     {
-        get { return coolerTemp; }
+        get { return _coolerTemp; }
         set
         {
             if ((value > 0) && (value < 20))
-                coolerTemp = value;
+                _coolerTemp = value;
         }
     }
 }

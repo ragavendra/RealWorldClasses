@@ -1,39 +1,54 @@
-public class Horse : Animal
+public class Horse : Animal, IVertebrates
 {
+    private int _eyesCount = 2;
+    private int _earsCount = 2;
+    private int _legsCount = 4;
+    private bool _tail = true;
+    private bool _backbone = true;
+    public bool Backbone{ get { return _backbone; } set { _backbone = value; } }
 
-    public int eyes = 2;
-    public int ears = 2;
-    public int legs = 4;
-    public int tail = 1;
-
-    public Horse(){
-        this.eyesCount = 2;
-        this.legsCount = 4;
-        this.hasTail = true;
+    private Horse()
+    {
+        EyesCount = _eyesCount;
+        LegsCount = _legsCount;
+        EarsCount = _earsCount;
+        HasTail = _tail;
+        Backbone = _backbone;
     }
 
-    public int runSpeed
+    private int RunSpeed
     {//in km/h
-        get { return runSpeed; }
+        get { return RunSpeed; }
         set
         {
             if (value < 300)
-                runSpeed = value;
+                RunSpeed = value;
         }
     }
 
-    public bool Running()
+    private bool Running
     {
-        if (runSpeed < 20)
-            return false;
-        return true;
-    }
-
-    public bool Walking()
-    {
-        if (runSpeed < 20)
+        get
+        {
+            if (RunSpeed < 20)
+            {
+                return false;
+            }
             return true;
-        return false;
+        }
     }
 
+    private bool Walking
+    {
+        get
+        {
+            if (RunSpeed < 20)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    // bool IVertebrates.Backbone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 }

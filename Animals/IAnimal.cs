@@ -1,11 +1,11 @@
 
-public interface IAnimal{
-
-    public int eyesCount { get; set;}
-    public int earsCount { get; set;}
-    public int noseCount { get; set;}
-    public int mouthCount { get; set;}
-    public int legsCount { get; set;}
-    public bool hasTail { get; set;}
+public interface IAnimal
+{
+    public int EyesCount { get; set;}
+    public int EarsCount { get; set;}
+    public int NoseCount { get; set;}
+    public int MouthCount { get; set;}
+    public int LegsCount { get; set;}
+    public bool HasTail { get; set;}
 
 }
