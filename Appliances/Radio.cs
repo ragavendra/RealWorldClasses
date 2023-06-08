@@ -11,65 +11,90 @@ namespace RealWorldClasses
 
     class Radio {
 
-        private int volume_;
+        private int _volume;
+
+        private double _frequency;
+
+        private bool _on;
+
+        //set default to FM
+        private amFm _amFm;
+
+        public amFm AmFm
+        {
+            get { return _amFm; }
+
+            set { _amFm = value; }
+        }
 
         public int Volume {
             get {
-                return volume_;
+                return _volume;
             }
 
             set {
                 if (value <= 100)
-                    volume_ = value;
+                    _volume = value;
             }
         }
 
-        public void incrVol() {
-            if (volume_ < 95)
-                volume_ = volume_ + 5;
+        public int IncreaseVolume
+        {
+            set
+            {
+                if (_volume < 95)
+                {
+                    _volume = _volume + 5;
+                }
+            }
+            get { return _volume; }
         }
 
-        public void deccrVol() {
-            if (volume_ > 5)
-                volume_ = volume_ - 5;
-        }
+        public int DecreaseVolume
+        {
+            set
+            {
+                if (_volume > 5)
+                {
+                    _volume = _volume - 5;
+                }
+            }
 
-        private double frequency_;
+            get{ return _volume; }
+        }
 
         public double Station {
-            get { return frequency_; }
+            get { return _frequency; }
 
             set
             {
                 //for AM station
-                if (amFm_ == amFm.AM)
+                if (_amFm == amFm.AM)
                     if ((value < 600) && (value > 55))
-                        frequency_ = value;
+                        _frequency = value;
                     else { }
                 //for FM station
                 else
                     if ((value < 300) && (value > 35))
-                    frequency_ = value;
+                    _frequency = value;
             }
         }
 
-        public bool onOff = false;
-
-        //set default to FM
-        public amFm amFm_ = amFm.FM;
-
         public void Display() {
-            Console.WriteLine($"Station is: {amFm_}");
+            Console.WriteLine($"Station is: {_amFm}");
             Console.WriteLine($"Frequency is: {Station}");
             Console.WriteLine($"Volume is: {Volume}");
         }
 
-        public Radio() {
+        public Radio()
+        {
+            _on = true;
+            _amFm = amFm.FM;
         }
 
         ~Radio() { 
-            amFm_ = amFm.FM;
-            onOff = false;
+            _amFm = amFm.FM;
+            _on = false;
         }
 
     }
