@@ -4,23 +4,6 @@ using System.Text.Json.Nodes;
 
 namespace RealWorldClasses
 {
-    internal class RealWorldClasses
-    {
-
-        public static void main() {
-
-            //turn on and listen to radio with 25 volume and fm 101.5
-            Radio radio = new Radio();
-            radio.onOff = true;
-            radio.amFm_ = amFm.FM;
-            radio.incrVol();
-            radio.Volume = 25;
-            radio.Station = 101.5;
-            radio.Station = 25;  //should not set
-            radio.Display();
-        }
-    }
-
     public enum amFm {
         AM = 0,
         FM = 1

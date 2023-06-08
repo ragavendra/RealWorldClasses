@@ -1,13 +1,13 @@
 class Fridge
 {
-    public int _freezerSize;
+    private int _freezerSize;
 
-    public int _coolerSize;
+    private int _coolerSize;
 
-    public int _freezerTemp;
-    public int _coolerTemp;
+    private int _freezerTemp;
+    private int _coolerTemp;
 
-    public int FreezerTemp
+    private int FreezerTemp
     {
         get { return _freezerTemp; }
         set
@@ -17,7 +17,7 @@ class Fridge
         }
     }
 
-    public int CoolerTemp
+    private int CoolerTemp
     {
         get { return _coolerTemp; }
         set

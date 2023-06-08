@@ -7,7 +7,7 @@ public class Horse : Animal, IVertebrates
     private bool _backbone = true;
     public bool Backbone{ get { return _backbone; } set { _backbone = value; } }
 
-    private Horse()
+    public Horse()
     {
         EyesCount = _eyesCount;
         LegsCount = _legsCount;
@@ -16,7 +16,7 @@ public class Horse : Animal, IVertebrates
         Backbone = _backbone;
     }
 
-    private int RunSpeed
+    public int RunSpeed
     {//in km/h
         get { return RunSpeed; }
         set
@@ -26,7 +26,7 @@ public class Horse : Animal, IVertebrates
         }
     }
 
-    private bool Running
+    public bool Running
     {
         get
         {
@@ -38,7 +38,7 @@ public class Horse : Animal, IVertebrates
         }
     }
 
-    private bool Walking
+    public bool Walking
     {
         get
         {
