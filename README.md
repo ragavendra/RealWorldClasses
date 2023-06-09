@@ -13,7 +13,7 @@ Clone this repo and submit a pull request for the contribution.
 ## Illustrations
 Please refer wikipedia or the sample image below to help with the hierarchy for the living beings.
 
-![illustration](https://stylesatlife.com/wp-content/uploads/2018/04/Animal-classification.jpg.webp)
+![illustration](https://stylesatlife.com/wp-content/uploads/2018/04/Animal-classification.jpg.webp__)
 
 ### Donations
 
