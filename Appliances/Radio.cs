@@ -9,7 +9,8 @@ namespace RealWorldClasses
         FM = 1
     }
 
-    class Radio {
+    public class Radio
+    {
 
         private int _volume;
 
@@ -27,14 +28,27 @@ namespace RealWorldClasses
             set { _amFm = value; }
         }
 
-        public int Volume {
-            get {
-                return _volume;
+        public int Volume
+        {
+
+            get
+            {
+                if (_on)
+                {
+                    return _volume;
+                }
+                return 0;
             }
 
-            set {
-                if (value <= 100)
-                    _volume = value;
+            set
+            {
+                if (_on)
+                {
+                    if (value <= 100)
+                    {
+                        _volume = value;
+                    }
+                }
             }
         }
 

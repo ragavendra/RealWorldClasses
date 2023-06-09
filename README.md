@@ -1,12 +1,16 @@
-# RealWorldClasses
+## RealWorldClasses
 Repo for classes of real world
 
-# Purpose
+## Purpose
 Real world objects can be used almost anywhere in the industry, especially for creating virtual world's and similar.
 
-# Contributions
+## Contributions
 Clone this repo and submit a pull request for the contribution.
 
+## Illustrations
+Please refer wikipedia or the sample image below to help the hierarchy.
+
+[![illustration](https://stylesatlife.com/wp-content/uploads/2018/04/Animal-classification.jpg.webp)]
 
 ### Donations
 
