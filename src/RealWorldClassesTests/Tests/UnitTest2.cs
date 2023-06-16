@@ -18,7 +18,12 @@ public class UnitTest2
 
         var stubBird = new Mock<IBird>();
 
-        stubBird.Setup(stu => stu.FlyingSpeed).Returns(6);
+        // stubBird.Setup(stu => stu.FlyingSpeed).Returns(6);
+        Assert.False(stubBird.Object.Flying);
+
+        // stubBird.Setup(stu => stu.FlyingSpeed).Returns(1);
+        // Assert.True(stubBird.Object.Flying);
+
         Assert.Equal(hummingbird.Flying, !stubBird.Object.Flying);
     }
 }
