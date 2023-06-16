@@ -19,6 +19,10 @@ namespace RealWorldClasses.Birds
 
         private int _legsCount = 2;
 
+        private bool _flying = false;
+
+        private int _flyingSpeed = 10;
+
         private bool _tail;
 
         public bool Fly { get { return _fly; } set { _fly = value; } }
@@ -34,5 +38,13 @@ namespace RealWorldClasses.Birds
         public int LegsCount { get { return _legsCount; } set { _legsCount = value; } }
 
         public bool Tail { get { return _tail; } set { _tail = value; } }
+
+        public bool Flying
+        {
+            get { if (_flyingSpeed > 3) { _flying = true; return _flying; } else { return false; } }
+            set { if (_flyingSpeed > 3) { _flying = true; } }
+        }
+
+        public int FlyingSpeed { get { return _flyingSpeed; } set { _flyingSpeed = value; } }
     }
 }

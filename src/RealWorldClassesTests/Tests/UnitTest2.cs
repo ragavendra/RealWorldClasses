@@ -8,12 +8,17 @@ namespace RealWorldClassesTests;
 public class UnitTest2
 {
     [Fact]
-    public void Test6()
+    public void HummingBirdFeatures()
     {
         var stubAnimal = new Mock<IAnimal>();
-        stubAnimal.Setup(stu => stu.EarsCount).Returns(6);
+        stubAnimal.Setup(stu => stu.EarsCount).Returns(2);
 
         Hummingbird hummingbird = new Hummingbird();
-        Assert.True(hummingbird.Equals(stubAnimal));
+        Assert.Equal(hummingbird.EarsCount, stubAnimal.Object.EarsCount);
+
+        var stubBird = new Mock<IBird>();
+
+        stubBird.Setup(stu => stu.FlyingSpeed).Returns(6);
+        Assert.Equal(hummingbird.Flying, !stubBird.Object.Flying);
     }
 }
