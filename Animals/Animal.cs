@@ -6,7 +6,7 @@ public class Animal : IAnimal{
     public int NoseCount { get; set;}
     public int MouthCount { get; set;}
     public int LegsCount { get; set;}
-    public bool HasTail { get; set;}
+    public bool Tail { get; set;}
 
     //lets set defaults as to what most animals have
     public Animal(){
@@ -15,7 +15,7 @@ public class Animal : IAnimal{
         this.NoseCount = 1;
         this.MouthCount = 1;
         this.LegsCount = 4;
-        this.HasTail = true;
+        this.Tail = true;
     }
 
 }

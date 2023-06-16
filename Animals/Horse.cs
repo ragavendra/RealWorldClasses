@@ -12,7 +12,7 @@ public class Horse : Animal, IVertebrates
         EyesCount = _eyesCount;
         LegsCount = _legsCount;
         EarsCount = _earsCount;
-        HasTail = _tail;
+        Tail = _tail;
         Backbone = _backbone;
     }
 
