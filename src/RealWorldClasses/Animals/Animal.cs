@@ -8,6 +8,8 @@ public class Animal : IAnimal{
     public int LegsCount { get; set;}
     public bool Tail { get; set;}
 
+    public bool Walk { get { return true; } }
+
     //lets set defaults as to what most animals have
     public Animal(){
         this.EyesCount = 2;

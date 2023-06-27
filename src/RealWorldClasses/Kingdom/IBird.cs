@@ -6,5 +6,5 @@ public interface IBird : IAnimal
     public bool Flying { get; set;}
 
     // in km / hour
-    public int FlyingSpeed { get; set;}
+    public int MovingSpeed { get; set;}
 }

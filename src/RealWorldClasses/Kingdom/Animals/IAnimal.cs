@@ -1,16 +1,20 @@
 
 public interface IAnimal
 {
-    public int EyesCount { get; set;}
+    public int EyesCount { get; }
 
-    public int EarsCount { get; set;}
+    public int EarsCount { get; }
 
-    public int NoseCount { get; set;}
+    public int NoseCount { get; }
 
-    public int MouthCount { get; set;}
+    public int MouthCount { get; }
 
-    public int LegsCount { get; set;}
+    public int LegsCount { get; }
 
-    public bool Tail { get; set;}
+    // has tail?
+    public bool Tail { get; }
+
+    // can walk?
+    public bool Walk { get; }
 
 }
