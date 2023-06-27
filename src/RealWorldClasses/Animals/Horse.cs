@@ -1,54 +1,20 @@
 public class Horse : Animal, IVertebrates
 {
-    private int _eyesCount = 2;
-    private int _earsCount = 2;
-    private int _legsCount = 4;
-    private bool _tail = true;
     private bool _backbone = true;
-    public bool Backbone{ get { return _backbone; } set { _backbone = value; } }
 
-    public Horse()
-    {
-        EyesCount = _eyesCount;
-        LegsCount = _legsCount;
-        EarsCount = _earsCount;
-        Tail = _tail;
-        Backbone = _backbone;
-    }
+    #region Horse specific
 
-    public int RunSpeed
-    {//in km/h
-        get { return RunSpeed; }
-        set
-        {
-            if (value < 300)
-                RunSpeed = value;
-        }
-    }
+    private int _legsHeight = 210;
 
-    public bool Running
-    {
-        get
-        {
-            if (RunSpeed < 20)
-            {
-                return false;
-            }
-            return true;
-        }
-    }
+    private int _tailLength = 170;
 
-    public bool Walking
-    {
-        get
-        {
-            if (RunSpeed < 20)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
+    #endregion
 
-    // bool IVertebrates.Backbone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public bool Backbone { get { return _backbone; } set { _backbone = value; } }
+
+    //in inches
+    public override int LegsHeight { get => _legsHeight; set => _legsHeight = value; }
+
+    //in inches
+    public override int TailLength { get => _tailLength; set => _tailLength = value; }
 }

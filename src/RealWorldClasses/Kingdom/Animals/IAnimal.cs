@@ -11,8 +11,14 @@ public interface IAnimal
 
     public int LegsCount { get; }
 
+    // in inches
+    public int LegsHeight { get; }
+
     // has tail?
     public bool Tail { get; }
+
+    // in inches
+    public int TailLength { get; }
 
     // can walk?
     public bool Walk { get; }

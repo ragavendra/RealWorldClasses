@@ -45,6 +45,16 @@ namespace RealWorldClasses.Birds
 
         public int LegsCount { get { return _legsCount; } set { _legsCount = value; } }
 
+        #region  specific to a Bird
+
+        public abstract int BeakLength { get; set; }
+
+        public abstract int TailLength { get; set; }
+
+        public abstract int LegsHeight { get; set; }
+
+        #endregion
+
         public bool Tail { get { return _tail; } set { _tail = value; } }
 
         public bool Flying
@@ -61,6 +71,6 @@ namespace RealWorldClasses.Birds
 
         public int MovingSpeed { get { return _movingSpeed; } set { _movingSpeed = value; } }
 
-        public bool Walk { get { return true; }}
+        public bool Walk { get { return _walk; }}
     }
 }

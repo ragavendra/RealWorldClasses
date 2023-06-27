@@ -19,6 +19,7 @@ radio.Station = 25;  //should not set
 radio.Display();
 Console.WriteLine();
 
+Console.BackgroundColor = ConsoleColor.Magenta;
 Hummingbird hummingbird = new Hummingbird();
 
 // Logger logger;
@@ -31,4 +32,16 @@ foreach(var property in typeof(Hummingbird).GetProperties())
     Console.WriteLine($"{property.Name} is {property.GetValue(hummingbird)}");
 }
 
+Console.BackgroundColor = ConsoleColor.Green;
+Console.WriteLine("---------");
+
+Horse horse = new Horse();
+
 // Parallel.ForEach(hummingbird.GetType().GetProperties(), type_ => Console.WriteLine($" is - {type_}"));
+Console.WriteLine($"{typeof(Horse).Name} has - ");
+
+foreach(var property in typeof(Horse).GetProperties())
+{
+    // property.GetValue(hummingbird);
+    Console.WriteLine($"{property.Name} is {property.GetValue(horse)}");
+}
