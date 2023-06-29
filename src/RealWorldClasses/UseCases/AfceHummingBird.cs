@@ -10,12 +10,17 @@ namespace RealWorldClasses.UseCases
     {
         public delegate void EventHandler(string message);
 
-        public event EventHandler Tweet;
+        public event EventHandler Message;
         // { get; set; }
 
         public void TweetMessage(string tweet)
         {
-            Tweet.Invoke(tweet);
+            Message?.Invoke(tweet + " tweet!");
+        }
+
+        public void GroakMessage(string groak)
+        {
+            Message?.Invoke(groak + " groak!");
         }
     }
 
@@ -23,12 +28,12 @@ namespace RealWorldClasses.UseCases
     {
         public Listener(AfceHummingBird afceHummingBird)
         {
-            afceHummingBird.Tweet += PrintMessage;
+            afceHummingBird.Message += PrintMessage;
         }
 
         void PrintMessage(string message)
         {
-            Console.WriteLine($"{GetType().Name} heard - {message} !");
+            Console.WriteLine($"{GetType().Name} heard - {message}");
         }
     }
 
@@ -36,12 +41,12 @@ namespace RealWorldClasses.UseCases
     {
         public Listener2(AfceHummingBird afceHummingBird)
         {
-            afceHummingBird.Tweet += PrintMessage;
+            afceHummingBird.Message += PrintMessage;
         }
 
         void PrintMessage(string message)
         {
-            Console.WriteLine($"{GetType().Name} heard - {message} !");
+            Console.WriteLine($"{GetType().Name} heard - {message}");
         }
     }
 
@@ -49,12 +54,12 @@ namespace RealWorldClasses.UseCases
     {
         public Listener3(AfceHummingBird afceHummingBird)
         {
-            afceHummingBird.Tweet += PrintMessage;
+            afceHummingBird.Message += PrintMessage;
         }
 
         void PrintMessage(string message)
         {
-            Console.WriteLine($"{GetType().Name} heard - {message} !");
+            Console.WriteLine($"{GetType().Name} heard - {message}");
         }
     }
 }

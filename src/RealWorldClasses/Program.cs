@@ -52,4 +52,5 @@ new Listener(afceHummingBird);
 new Listener2(afceHummingBird); 
 new Listener3(afceHummingBird); 
 
+afceHummingBird.GroakMessage("Hi");
 afceHummingBird.TweetMessage("Hello");
