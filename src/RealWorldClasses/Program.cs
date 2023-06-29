@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RealWorldClasses;
 using RealWorldClasses.Birds;
+using RealWorldClasses.UseCases;
 
 //turn on and listen to radio with 25 volume and fm 101.5
 Radio radio = new Radio() { AmFm = amFm.AM};
@@ -45,3 +46,10 @@ foreach(var property in typeof(Horse).GetProperties())
     // property.GetValue(hummingbird);
     Console.WriteLine($"{property.Name} is {property.GetValue(horse)}");
 }
+
+AfceHummingBird afceHummingBird = new AfceHummingBird();
+new Listener(afceHummingBird); 
+new Listener2(afceHummingBird); 
+new Listener3(afceHummingBird); 
+
+afceHummingBird.TweetMessage("Hello");
