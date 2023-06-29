@@ -50,6 +50,22 @@ namespace RealWorldClasses.UseCases
         }
     }
 
+    public class Listener<T> where T : AfceHummingBird
+    {
+        public Listener(AfceHummingBird afceHummingBird)
+        {
+            afceHummingBird.Message += PrintMessage;
+        }
+
+        void PrintMessage(string message)
+        {
+            Console.WriteLine($"{GetType().Name} heard - {message}");
+        }
+
+        protected string SomeStr { get; set; }
+    }
+
+
     public class Listener3
     {
         public Listener3(AfceHummingBird afceHummingBird)
@@ -60,6 +76,33 @@ namespace RealWorldClasses.UseCases
         void PrintMessage(string message)
         {
             Console.WriteLine($"{GetType().Name} heard - {message}");
+        }
+
+        protected string SomeStr { get; set; }
+    }
+
+    public class SomeType<T> : Listener<T> where T : AfceHummingBird
+    {
+        private int _someMesg;
+
+        // public T type { get; set; }
+
+        public SomeType(int someMesg) : base(new AfceHummingBird())
+        {
+            _someMesg = someMesg;
+            // T someVar;
+        }
+
+        public string ToString(int num)
+        {
+            SomeStr = "xyz";
+            return num.ToString();
+        }
+
+        public override string ToString()
+        {
+            // this.ToString();
+            return _someMesg.ToString() + " plus.";
         }
     }
 }

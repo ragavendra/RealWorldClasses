@@ -21,7 +21,7 @@ radio.Display();
 Console.WriteLine();
 
 Console.BackgroundColor = ConsoleColor.Magenta;
-Hummingbird hummingbird = new Hummingbird();
+Bird hummingbird = new Hummingbird();
 
 // Logger logger;
 // hummingbird.EarsCount
@@ -54,3 +54,6 @@ new Listener3(afceHummingBird);
 
 afceHummingBird.GroakMessage("Hi");
 afceHummingBird.TweetMessage("Hello");
+
+SomeType<AfceHummingBird> someType = new SomeType<AfceHummingBird>(6);
+Console.WriteLine(someType.ToString());

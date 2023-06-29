@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RealWorldClasses.Birds
+namespace RealWorldClasses.Kingdom.Animals
 {
     ///<summary>Base abstract class to hold the defaults for the bird.
     /// At this point assuming a bird has these deafult properties.</summary>

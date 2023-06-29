@@ -1,6 +1,7 @@
-
-public abstract class Animal : IAnimal
+namespace RealWorldClasses.Kingdom.Animals
 {
+    public abstract class Animal : IAnimal
+    {
         // can fly?
         private bool _fly = false;
 
@@ -51,6 +52,7 @@ public abstract class Animal : IAnimal
 
         public int MovingSpeed { get { return _movingSpeed; } set { _movingSpeed = value; } }
 
-        public bool Walk { get { return true; }}
+        public bool Walk { get { return true; } }
 
+    }
 }

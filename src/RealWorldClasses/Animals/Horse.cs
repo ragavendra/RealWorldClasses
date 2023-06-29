@@ -1,3 +1,5 @@
+using RealWorldClasses.Kingdom.Animals;
+
 public class Horse : Animal, IVertebrates
 {
     private bool _backbone = true;
