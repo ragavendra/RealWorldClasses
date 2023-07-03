@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RealWorldClasses;
 using RealWorldClasses.Birds;
+using RealWorldClasses.Kingdom.Animals;
 using RealWorldClasses.UseCases;
 
 //turn on and listen to radio with 25 volume and fm 101.5
@@ -54,6 +55,3 @@ new Listener3(afceHummingBird);
 
 afceHummingBird.GroakMessage("Hi");
 afceHummingBird.TweetMessage("Hello");
-
-SomeType<AfceHummingBird> someType = new SomeType<AfceHummingBird>(6);
-Console.WriteLine(someType.ToString());
