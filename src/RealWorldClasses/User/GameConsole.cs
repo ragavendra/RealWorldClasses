@@ -7,9 +7,13 @@ namespace RealWorldClasses.User
 {
     public class GameConsole
     {
+        public void Execute()
+        {}
+
+/*
         public void MoveToRight(int steps)
         {
             Console.WriteLine($"Moved to right by {steps} steps.");
-        }
+        }*/
     }
 }

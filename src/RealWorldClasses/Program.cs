@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RealWorldClasses;
+using RealWorldClasses.Area;
 using RealWorldClasses.Birds;
 using RealWorldClasses.Kingdom.Animals;
 using RealWorldClasses.UseCases;
@@ -48,10 +49,48 @@ foreach(var property in typeof(Horse).GetProperties())
     Console.WriteLine($"{property.Name} is {property.GetValue(horse)}");
 }
 
-AfceHummingBird afceHummingBird = new AfceHummingBird();
-new Listener(afceHummingBird); 
-new Listener2(afceHummingBird); 
-new Listener3(afceHummingBird); 
+Coordinates coordinates = new Coordinates() { Latitude = 3.161, Longitude = 1.69 };
+
+AfceHummingBird afceHummingBird = new AfceHummingBird(coordinates);
+
+Coordinates listenerCoordinates = new Coordinates() { Latitude = 3.161, Longitude = 1.69 };
+
+try
+{
+    new Listener(afceHummingBird, listenerCoordinates);
+}
+catch (System.Exception ex)
+{
+
+    // throw;
+    Console.WriteLine(ex.Message);
+}
+
+// lets move this listener a bit further
+listenerCoordinates.Latitude = listenerCoordinates.Latitude + .31;
+
+
+try
+{
+    new Listener2(afceHummingBird, listenerCoordinates);
+}
+catch (System.Exception ex)
+{
+
+    // throw;
+    Console.WriteLine(ex.Message);
+}
+
+try
+{
+    new Listener3(afceHummingBird, listenerCoordinates);
+}
+catch (System.Exception ex)
+{
+
+    // throw;
+    Console.WriteLine(ex.Message);
+}
 
 afceHummingBird.GroakMessage("Hi");
 afceHummingBird.TweetMessage("Hello");
