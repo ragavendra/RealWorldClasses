@@ -86,20 +86,23 @@ namespace RealWorldClasses.UseCases
 
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
             if (!_disposed)
             {
-                // disp managed resources
-                Dispose_();
+                if(disposing)
+                {
+                    // disp managed resources
+                    // _radius = null;
+                }
             }
-
 
             // disp un managed resources
             _disposed = true;
-        }
-
-        private void Dispose_()
-        {
-            // GC.SuppressFinalize(this);
         }
 
         public Listener(AfceHummingBird afceHummingBird, Coordinates location, string name)
