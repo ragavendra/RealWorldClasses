@@ -1,58 +1,13 @@
 
 namespace RealWorldClasses.Electronics
 {
-    public class LED : IDisposable
+    public class LED : Electronics, IDisposable
     {
-        #region Resistor specific
-
-        private readonly float _amperage;
-
-        private readonly float _voltage;
-
-        private float _inputAmperage;
-
-        private float _inputVoltage;
-
-        private bool _connected;
+        #region LED specific
 
         private bool _disposed;
 
-        private Link _anode;
-
-        private Link _cathode;
-
-        public Link Anode { get => _anode; set => _anode = value; }
-
-        public Link Cathode { get => _cathode; set => _cathode = value; }
-
         #endregion
-
-        // Can be set once only
-        public float Amperage { get => _amperage; }
-
-        // Can be set once only
-        public float Voltage { get => _voltage; }
-
-        // Can be set only
-        public float InputAmperage { set => _inputAmperage = value; }
-
-        // Can be set only
-        public float InputVoltage { set => _inputVoltage = value; }
-
-        public bool Connected
-        {
-            get => _connected;
-            /*
-            {
-                if ((_anode != null) && (_cathode != null))
-                {
-                    _connected = true;
-                    return _connected;
-                }
-
-                return false;
-            };*/
-        }
 
         public LED(float amperage, float voltage)
         {
@@ -62,46 +17,47 @@ namespace RealWorldClasses.Electronics
 
         public bool Glowing()
         {
-            if ((_anode != null) && (_cathode != null))
+            if ((Anode != null) && (Cathode != null))
             {
-                _connected = true;
+                Connected = true;
+
+                if ((InputVoltage == null) || (InputAmperage == null))
+                {
+                    Console.WriteLine("Please set input voltage or amperage");
+                    return false;
+                }
+
                 // return true
+                if ((_inputVoltage <= _voltage) && (_inputAmperage <= _amperage))
+                {
+                    return true;
+                }
             }
 
             return false;
         }
 
-        public bool Connect()
+        public void Dispose(bool dispose)
         {
-            if ((_anode != null) && (_cathode != null))
+            if(dispose)
             {
-                _connected = true;
-                // return true
-
-                if ((_inputVoltage == _voltage) && (_inputAmperage == _amperage))
-                {
-                    return true;
-                }
-                else
-                {
-                    // burn the LED
-                    Dispose();
-                }
+                // dispo un - mgd resources
+                Dispose();
             }
 
-            return false;
+            // dispo mgd resources
+            GC.SuppressFinalize(this);
+
+            _disposed = true;
+            // throw new NotImplementedException();
         }
 
         public void Dispose()
         {
-            if(_disposed)
+            if(!_disposed)
             {
 
             }
-
-            GC.SuppressFinalize(this);
-            _disposed = true;
-            // throw new NotImplementedException();
         }
     }
 }
