@@ -27,4 +27,18 @@ public class Birds
 
         Assert.Equal(hummingbird.Flying, !stubBird.Object.Flying);
     }
+
+    [Fact]
+    public void HummingbirdEyesCount()
+    {
+        // Arrange
+        var stubBird = new Mock<IBird>();
+        stubBird.Setup(stu => stu.EyesCount).Returns(2);
+
+        // Act
+        Hummingbird hummingbird = new Hummingbird();
+
+        // Assert
+        Assert.Equal(stubBird.Object.EyesCount, hummingbird.EyesCount);
+    }
 }

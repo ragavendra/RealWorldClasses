@@ -1,7 +1,7 @@
 
 namespace RealWorldClasses.Electronics
 {
-    public class Electronics
+    public class Electronics : IElectronics
     {
         #region Resistor specific
 

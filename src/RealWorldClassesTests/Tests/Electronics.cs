@@ -1,5 +1,6 @@
 using Xunit;
 using RealWorldClasses.Electronics;
+using Moq;
 
 namespace RealWorldClassesTests.Tests;
 
@@ -37,5 +38,21 @@ public class Electronics
             
         }
 
+    }
+
+    [Fact]
+    public void IElectronicsConnectCallCount()
+    {
+        // Arrange
+        var ielecMock = new Mock<IElectronics>();
+        ielecMock.Setup(x => x.Connect(It.IsAny<Link>(), It.IsAny<Link>()));
+
+        // Act
+        IElectronics electronics = ielecMock.Object;
+        electronics.Connect(It.IsAny<Link>(), It.IsAny<Link>());
+
+        // Assert
+        ielecMock.Verify(elec => elec.Connect(It.IsAny<Link>(), It.IsAny<Link>()), Times.AtMostOnce());
+        
     }
 }
