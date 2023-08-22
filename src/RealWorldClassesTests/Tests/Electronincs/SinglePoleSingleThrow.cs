@@ -11,12 +11,12 @@ public class SinglePoleSingelThrowTests
     public void IsConnected()
     {
         // Arrange
-        var inpnMock = new Mock<SinglePoleSingelThrow>();
+        var inpnMock = new Mock<SinglePoleSingleThrow>();
         var linkA = new Link() { };
         inpnMock.Setup(x => x.A).Returns(linkA);
 
         // Act
-        SinglePoleSingelThrow singlePoleSingelThrow = inpnMock.Object;
+        SinglePoleSingleThrow singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.True(singlePoleSingelThrow.IsOpen());
@@ -26,13 +26,13 @@ public class SinglePoleSingelThrowTests
     public void Close()
     {
         // Arrange
-        var inpnMock = new Mock<SinglePoleSingelThrow>();
+        var inpnMock = new Mock<SinglePoleSingleThrow>();
         var linkA = new Link() { };
         inpnMock.Setup(x => x.A).Returns(linkA);
         inpnMock.Setup(x => x.B).Returns(linkA);
 
         // Act
-        SinglePoleSingelThrow singlePoleSingelThrow = inpnMock.Object;
+        SinglePoleSingleThrow singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.False(singlePoleSingelThrow.IsOpen());

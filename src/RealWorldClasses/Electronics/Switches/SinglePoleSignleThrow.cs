@@ -2,7 +2,7 @@
 namespace RealWorldClasses.Electronics.Switches
 {
     // three pin, second one for small power source to activate switch
-    public class SinglePoleSingelThrow
+    public class SinglePoleSingleThrow
     {
         #region Switch specific
 
@@ -16,7 +16,7 @@ namespace RealWorldClasses.Electronics.Switches
 
         public virtual Link B { get => _b; set => _b = value; }
 
-        public SinglePoleSingelThrow()
+        public SinglePoleSingleThrow()
         {
             // _amperage = amperage;
         }
