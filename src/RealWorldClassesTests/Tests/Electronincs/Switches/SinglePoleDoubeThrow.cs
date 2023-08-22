@@ -17,7 +17,7 @@ public class SinglePoleDoubleThrowTests
         inpnMock.Setup(x => x.B).Returns(linkA);
 
         // Act
-        SinglePoleDoubleThrow singlePoleSingelThrow = inpnMock.Object;
+        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.True(singlePoleSingelThrow.AToB());
@@ -34,7 +34,7 @@ public class SinglePoleDoubleThrowTests
         inpnMock.Setup(x => x.C).Returns(linkA);
 
         // Act
-        SinglePoleDoubleThrow singlePoleSingelThrow = inpnMock.Object;
+        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.True(singlePoleSingelThrow.AToC());
