@@ -10,14 +10,15 @@ public class DoublePoleDoubleThrowTests
     [Fact]
     public void AtoB()
     {
+        // Forgive the var names
         // Arrange
-        var inpnMock = new Mock<SinglePoleDoubleThrow>();
+        var inpnMock = new Mock<DoublePoleDoubleThrow>();
         var linkA = new Link() { };
         inpnMock.Setup(x => x.A).Returns(linkA);
         inpnMock.Setup(x => x.B).Returns(linkA);
 
         // Act
-        SinglePoleDoubleThrow singlePoleSingelThrow = inpnMock.Object;
+        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.True(singlePoleSingelThrow.AToB());
@@ -28,13 +29,13 @@ public class DoublePoleDoubleThrowTests
     public void AtoC()
     {
         // Arrange
-        var inpnMock = new Mock<SinglePoleDoubleThrow>();
+        var inpnMock = new Mock<DoublePoleDoubleThrow>();
         var linkA = new Link() { };
         inpnMock.Setup(x => x.A).Returns(linkA);
         inpnMock.Setup(x => x.C).Returns(linkA);
 
         // Act
-        SinglePoleDoubleThrow singlePoleSingelThrow = inpnMock.Object;
+        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
         Assert.True(singlePoleSingelThrow.AToC());
