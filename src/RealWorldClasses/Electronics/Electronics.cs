@@ -9,19 +9,15 @@ namespace RealWorldClasses.Electronics
 
         private readonly float _voltage;
 
-        private float _inputAmperage;
-
-        private float _inputVoltage;
-
         private bool _connected;
 
         private Link _anode;
 
         private Link _cathode;
 
-        public Link Anode { get => _anode; set => _anode = value; }
+        public virtual Link Anode { get => _anode; set => _anode = value; }
 
-        public Link Cathode { get => _cathode; set => _cathode = value; }
+        public virtual Link Cathode { get => _cathode; set => _cathode = value; }
 
         #endregion
 
@@ -31,36 +27,28 @@ namespace RealWorldClasses.Electronics
         // Can be set once only
         public float Voltage { get => _voltage; }
 
-        // Can be set only
-        public float InputAmperage { set => _inputAmperage = value; get => _inputAmperage;}
+        public Electronics()
+        {}
 
-        // Can be set only
-        public float InputVoltage { set => _inputVoltage = value; get => _inputVoltage; }
-
-        public bool Connected
+        public Electronics(float amperage)
         {
-            get => _connected;
-            /*
-            {
-                if ((_anode != null) && (_cathode != null))
-                {
-                    _connected = true;
-                    return _connected;
-                }
-
-                return false;
-            };*/
+            _amperage = amperage;
         }
 
-        // behaviour on connected to a battery source
-        public bool Connect()
+        public Electronics(float amperage, float voltage)
         {
-            if ((_anode != null) && (_cathode != null))
-            {
-                _connected = true;
-            }
+            _amperage = amperage;
+            _voltage = voltage;
+        }
 
-            return false;
+        public bool Connected { get => _connected; set => _connected = value; }
+
+        // behaviour on connected to a battery source
+        public void Connect(Link anode, Link cathode)
+        {
+            _anode = anode;
+            _cathode = cathode;
+            _connected = true;
         }
     }
 }

@@ -9,26 +9,18 @@ namespace RealWorldClasses.Electronics
 
         #endregion
 
-        public LED(float amperage, float voltage)
+        public LED(float amperage, float voltage) : base(amperage, voltage)
         {
-            _amperage = amperage;
-            _voltage = voltage;
+            // _amperage = amperage;
+            // _voltage = voltage;
         }
 
         public bool Glowing()
         {
-            if ((Anode != null) && (Cathode != null))
+            if (Connected)
             {
-                Connected = true;
-
-                if ((InputVoltage == null) || (InputAmperage == null))
-                {
-                    Console.WriteLine("Please set input voltage or amperage");
-                    return false;
-                }
-
                 // return true
-                if ((_inputVoltage <= _voltage) && (_inputAmperage <= _amperage))
+                // if not burnt 
                 {
                     return true;
                 }

@@ -1,19 +1,11 @@
 
 namespace RealWorldClasses.Electronics
 {
-    public class Capacitor
+    public class Capacitor : Electronics
     {
         #region Capacitor specific
 
         private readonly float _capacitance;
-
-        private Link _anode;
-
-        private Link _cathode;
-
-        public Link Anode { get => _anode; set => _anode = value; }
-
-        public Link Cathode { get => _cathode; set => _cathode = value; }
 
         #endregion
 

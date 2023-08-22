@@ -1,29 +1,15 @@
 
 namespace RealWorldClasses.Electronics
 {
-    public class Battery
+    public class Battery : Electronics
     {
-        #region Resistor specific
-
-        private readonly float _voltage;
-
-        private readonly float _amperage;
+        #region Battery specific
 
         private readonly TimeSpan _shelfLife;
 
         private readonly TimeSpan _inUseLife;
 
-        private Link _anode;
-
-        private Link _cathode;
-
         #endregion
-
-        // Can be set once only
-        public float Voltage { get => _voltage; }
-
-        // Can be set once only
-        public float Amperage { get => _amperage; }
 
         // Can be set once only
         public TimeSpan ShelfLife { get => _shelfLife; }
@@ -31,20 +17,16 @@ namespace RealWorldClasses.Electronics
         // Can be set once only
         public TimeSpan InUseLife { get => _inUseLife; }
 
-        public Link Anode { get => _anode; set => _anode = value; }
-
-        public Link Cathode { get => _cathode; set => _cathode = value; }
-
-        public Battery(float voltage, float amperage)
+        public Battery(float amperage, float voltage) : base(amperage, voltage)
         {
-            _voltage = voltage;
-            _amperage = amperage;
+            // _voltage = voltage;
+            // _amperage = amperage;
         }
 
-        public Battery(float voltage, float amperage, TimeSpan shelfLife, TimeSpan inUseLife)
+        public Battery(float amperage, float voltage, TimeSpan shelfLife, TimeSpan inUseLife) : base(amperage, voltage)
         {
-            _voltage = voltage;
-            _amperage = amperage;
+            // _voltage = voltage;
+            // _amperage = amperage;
             _shelfLife = shelfLife;
             _inUseLife = inUseLife;
         }
