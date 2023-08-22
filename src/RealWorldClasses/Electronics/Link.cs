@@ -11,7 +11,7 @@ namespace RealWorldClasses.Electronics
 
         public Link B { get; set; }
 
-        public float Amperage { get => _amperage ; set => _voltage = value; }
+        public float Amperage { get => _amperage ; set => _amperage = value; }
 
         public float Voltage { get => _voltage; set => _voltage = value; }
 

@@ -2,7 +2,7 @@ using Xunit;
 using RealWorldClasses.Electronics;
 using Moq;
 
-namespace RealWorldClassesTests.Tests;
+namespace RealWorldClassesTests.Tests.Electronics;
 
 public class Electronics
 {
