@@ -13,7 +13,7 @@ public class SinglePoleSingelThrowTests
         // Arrange
         var inpnMock = new Mock<SinglePoleSingleThrow>();
         var linkA = new Link() { };
-        inpnMock.Setup(x => x.A).Returns(linkA);
+        inpnMock.SetupGet(x => x.A).Returns(linkA);
 
         // Act
         var singlePoleSingelThrow = inpnMock.Object;

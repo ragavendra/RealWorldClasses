@@ -1,7 +1,6 @@
 using Xunit;
-using RealWorldClasses.Electronics;
 using Moq;
-using RealWorldClasses.Electronics.Switches;
+using RealWorldClasses.Electronics.Relays;
 
 namespace RealWorldClassesTests.Tests.Electronics;
 
@@ -15,32 +14,41 @@ public class OrTests
     {
         // Forgive the var names
         // Arrange
-        var inpnMock = new Mock<Or>();
-        var linkA = new Link() { };
-        inpnMock.Setup(x => x.A).Returns(a);
-        inpnMock.Setup(x => x.B).Returns(b);
+        var or = new Or(){ A = a, B = b };
 
         // Act
-        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
-        Assert.True(singlePoleSingelThrow.Result());
+        Assert.True(or.Result());
     }
 
+    [Theory]
     [InlineData(false, false)]
     public void Orf(bool a, bool b)
     {
         // Forgive the var names
         // Arrange
-        var inpnMock = new Mock<Or>();
-        var linkA = new Link() { };
-        inpnMock.Setup(x => x.A).Returns(a);
-        inpnMock.Setup(x => x.B).Returns(b);
+        var or = new Or(){ A = a, B = b };
 
         // Act
-        var singlePoleSingelThrow = inpnMock.Object;
 
         // Assert
-        Assert.True(singlePoleSingelThrow.Result());
+        Assert.False(or.Result());
+    }
+
+    [Theory]
+    [InlineData(false, false)]
+    public void Relay(bool a, bool b)
+    {
+        // Forgive the var names
+        // Arrange
+        var mock = new Mock<IRelay>();
+        mock.Setup(r => r.Result()).Returns(false);
+
+        // Act
+        var or = mock.Object;
+
+        // Assert
+        Assert.False(or.Result());
     }
 }

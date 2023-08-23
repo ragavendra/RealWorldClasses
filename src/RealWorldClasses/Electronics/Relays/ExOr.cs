@@ -1,8 +1,7 @@
 
 namespace RealWorldClasses.Electronics.Relays
 {
-    // C is the output pin
-    public class Or : Relay
+    public class ExOr : Relay
     {
         /// <summary>
         /// Evaluates the result of the Or operation.
@@ -13,7 +12,7 @@ namespace RealWorldClasses.Electronics.Relays
             switch (A)
             {
                 case true when B is true:
-                    C = true;
+                    C = false;
                     return C;
 
                 case false when B is true:
@@ -29,8 +28,7 @@ namespace RealWorldClasses.Electronics.Relays
                     return C;
             }
 
-            C = default;
-            return C;
+            return C = default;
         }
     }
 }
