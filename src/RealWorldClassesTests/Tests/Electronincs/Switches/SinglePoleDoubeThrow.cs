@@ -40,4 +40,22 @@ public class SinglePoleDoubleThrowTests
         Assert.True(singlePoleSingelThrow.AToC());
         Assert.False(singlePoleSingelThrow.AToB());
     }
+
+    [Fact]
+    public void AtoC_()
+    {
+        // Arrange
+        var inpnMock = new Mock<SinglePoleDoubleThrow>();
+        var linkA = new Link() { };
+        inpnMock.Setup(x => x.A).Returns(linkA);
+        inpnMock.Setup(x => x.C).Returns(linkA);
+        inpnMock.Setup(x => x.D).Returns(linkA);
+
+        // Act
+        var singlePoleSingelThrow = inpnMock.Object;
+
+        // Assert
+        Assert.True(singlePoleSingelThrow.AToC());
+        Assert.False(singlePoleSingelThrow.AToB());
+    }
 }

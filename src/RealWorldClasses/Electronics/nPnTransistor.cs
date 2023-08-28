@@ -1,17 +1,19 @@
 
 namespace RealWorldClasses.Electronics
 {
-    // three pin, second one for small power source to activate switch
+    /// <summary>
+    /// This class three pin, second one for small power source to  activate switch.
+    /// <params>Abfre </params>
+    /// </summary>
     public class nPnTranstistor : Electronics
     {
         #region Transistor specific
 
-        private Link _power;
+        private Link? _power;
 
-        #endregion
+        #endregion Transistor specific
 
-        public virtual Link Power { get => _power; set => _power = value; }
-
+        public virtual Link? Power { get => _power; set => _power = value; }
 
         public nPnTranstistor(float amperage) : base(amperage)
         {
@@ -20,7 +22,7 @@ namespace RealWorldClasses.Electronics
 
         public bool IsPowered()
         {
-            if(Power.Amperage > 0)
+            if (Power?.Amperage > 0)
             {
                 Anode = Cathode;
                 return true;
