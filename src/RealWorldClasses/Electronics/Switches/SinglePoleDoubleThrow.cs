@@ -21,6 +21,16 @@ namespace RealWorldClasses.Electronics.Switches
         public virtual Link C { get => _c; set => _c = value; }
 
         /// <summary>
+        /// Single Pole Double Throw switch. Connects either A to B or A to C
+        /// </summary>
+        public SinglePoleDoubleThrow(Link a, Link b, Link c)
+        {
+            _a = a;
+            _b = b;
+            _c = c;
+        }
+
+        /// <summary>
         /// Checks if the switch is not connected From A to B
         /// </summary>
         /// <returns>True if not connected</returns>

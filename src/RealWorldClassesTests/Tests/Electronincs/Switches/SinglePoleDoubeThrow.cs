@@ -49,7 +49,7 @@ public class SinglePoleDoubleThrowTests
         var linkA = new Link() { };
         inpnMock.Setup(x => x.A).Returns(linkA);
         inpnMock.Setup(x => x.C).Returns(linkA);
-        inpnMock.Setup(x => x.D).Returns(linkA);
+        inpnMock.Setup(x => x.B).Returns(linkA);
 
         // Act
         var singlePoleSingelThrow = inpnMock.Object;

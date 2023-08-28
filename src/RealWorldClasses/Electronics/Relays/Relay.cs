@@ -14,13 +14,13 @@ namespace RealWorldClasses.Electronics.Relays
 
         #endregion
 
-        public bool A { get => _a; set => _a = value; }
+        public virtual bool A { get => _a; set => _a = value; }
 
-        public bool B { get => _b; set => _b = value; }
+        public virtual bool B { get => _b; set => _b = value; }
 
-        public bool C { get => _c; set => _c = value; }
+        public virtual bool C { get => _c; set => _c = value; }
 
-        public bool Result()
+        public virtual bool Result()
         {
             throw new NotImplementedException();
         }
