@@ -16,11 +16,17 @@ namespace RealWorldClasses.Electronics.Switches
 
         public virtual Link B { get => _b; set => _b = value; }
 
+        /// <summary>
+        /// Switch is created, but not conntected.
+        /// </summary>
         public Switch()
         {
             // _amperage = amperage;
         }
 
+        /// <summary>
+        /// Switch is created and conntected with the link.
+        /// </summary>
         public Switch(Link link)
         {
             _a = _b = link;

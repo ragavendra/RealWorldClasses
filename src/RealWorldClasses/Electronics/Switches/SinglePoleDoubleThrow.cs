@@ -6,36 +6,49 @@ namespace RealWorldClasses.Electronics.Switches
     {
         #region Switch specific
 
-        private Link _a;
-
-        private Link _b;
-
         private Link _c;
 
         #endregion
 
-        public virtual Link A { get => _a; set => _a = value; }
-
-        public virtual Link B { get => _b; set => _b = value; }
-
         public virtual Link C { get => _c; set => _c = value; }
 
-        /// <summary>
-        /// Single Pole Double Throw switch. Connects either A to B or A to C
-        /// </summary>
-        public SinglePoleDoubleThrow(Link a, Link b, Link c)
+        /// <inheritdoc/>
+        public SinglePoleDoubleThrow() : base()
         {
-            _a = a;
-            _b = b;
-            _c = c;
+        }
+
+        /// <inheritdoc/>
+        public SinglePoleDoubleThrow(Link a) : base(a)
+        {
         }
 
         /// <summary>
-        /// Checks if the switch is not connected From A to B
+        /// Single Pole Double Throw switch. Connects A to B.
+        /// For A to C connection use the <paramref name="a"/> <see cref="CloseAtoC"/>
         /// </summary>
-        /// <returns>True if not connected</returns>
-        public bool AToB()
+        public SinglePoleDoubleThrow(Link a, Link c) : base(a)
         {
+            _c = c;
+        }
+
+        public virtual bool CloseAtoC(Link link)
+        {
+            B = null;
+            A = C = link;
+            return true;
+        }
+
+        /// <summary>
+        /// Checks if the switch is connected From A to B
+        /// </summary>
+        /// <returns>True if connected</returns>
+        public bool IsAToB()
+        {
+            if(A is null || B is null)
+            {
+                return false;
+            }
+
             if(A.Equals(B))
             {
                 return true;
@@ -45,11 +58,16 @@ namespace RealWorldClasses.Electronics.Switches
         }
 
         /// <summary>
-        /// Checks if the switch is not connected From A to C
+        /// Checks if the switch is connected From A to C
         /// </summary>
-        /// <returns>True if not connected</returns>
-        public bool AToC()
+        /// <returns>True if connected</returns>
+        public bool IsAToC()
         {
+            if(A is null || C is null)
+            {
+                return false;
+            }
+
             if(A.Equals(C))
             {
                 return true;
