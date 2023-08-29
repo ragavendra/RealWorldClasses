@@ -18,6 +18,7 @@ public class SinglePoleDoubleThrowTests
 
         // Act
         var singlePoleSingelThrow = inpnMock.Object;
+        singlePoleSingelThrow.CloseAtoB();
 
         // Assert
         Assert.True(singlePoleSingelThrow.IsAToB());
@@ -65,9 +66,10 @@ public class SinglePoleDoubleThrowTests
     {
         // Arrange
         var linkA = new Link() { };
-        var inpnMock = new SinglePoleDoubleThrow(linkA);
+        var inpnMock = new SinglePoleDoubleThrow(){ A = linkA };
 
         // Act
+        inpnMock.CloseAtoB();
 
         // Assert
         Assert.True(inpnMock.IsAToB());
@@ -79,7 +81,7 @@ public class SinglePoleDoubleThrowTests
     {
         // Arrange
         var linkA = new Link() { };
-        var inpnMock = new SinglePoleDoubleThrow(linkA, linkA);
+        var inpnMock = new SinglePoleDoubleThrow(){ A = linkA, B = linkA };
 
         // Act
         inpnMock.CloseAtoC(linkA);

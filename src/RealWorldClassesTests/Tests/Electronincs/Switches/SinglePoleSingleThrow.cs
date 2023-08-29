@@ -41,7 +41,7 @@ public class SinglePoleSingleThrowTests
         var linkA = new Link() { };
 
         // Act
-        var inpnMock = new SinglePoleSingleThrow(linkA);
+        var inpnMock = new SinglePoleSingleThrow(){ A = linkA };
 
         // Assert
         Assert.False(inpnMock.IsOpen());
@@ -67,10 +67,10 @@ public class SinglePoleSingleThrowTests
     public void Close()
     {
         // Arrange
-        SinglePoleSingleThrow singlePoleSingleThrow = new SinglePoleSingleThrow(new Link());
+        SinglePoleSingleThrow singlePoleSingleThrow = new SinglePoleSingleThrow(){ A = new Link()};
 
         // Act
-        singlePoleSingleThrow.Close();
+        singlePoleSingleThrow.CloseAtoB();
 
         // Assert
         Assert.False(singlePoleSingleThrow.IsOpen());
@@ -81,7 +81,7 @@ public class SinglePoleSingleThrowTests
     public void Open()
     {
         // Arrange
-        SinglePoleSingleThrow singlePoleSingleThrow = new SinglePoleSingleThrow(new Link());
+        SinglePoleSingleThrow singlePoleSingleThrow = new SinglePoleSingleThrow(){ A = new Link() };
 
         // Act
         singlePoleSingleThrow.Open();

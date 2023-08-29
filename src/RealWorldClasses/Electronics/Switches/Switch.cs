@@ -1,7 +1,9 @@
 
 namespace RealWorldClasses.Electronics.Switches
 {
-    // three pin, second one for small power source to activate switch
+    /// <summary>
+    /// Switch is created, but not conntected.
+    /// </summary>
     public class Switch
     {
         #region Switch specific
@@ -17,26 +19,9 @@ namespace RealWorldClasses.Electronics.Switches
         public virtual Link B { get => _b; set => _b = value; }
 
         /// <summary>
-        /// Switch is created, but not conntected.
+        /// Closes the switch between Links A and B.
         /// </summary>
-        public Switch()
-        {
-            // _amperage = amperage;
-        }
-
-        /// <summary>
-        /// Switch is created and conntected with the link.
-        /// </summary>
-        public Switch(Link link)
-        {
-            _a = _b = link;
-            // _amperage = amperage;
-        }
-
-        /// <summary>
-        /// Closes the switch.
-        /// </summary>
-        public virtual bool Close()
+        public virtual bool CloseAtoB()
         {
             B ??= A;
             A ??= B;
@@ -45,16 +30,6 @@ namespace RealWorldClasses.Electronics.Switches
             {
                 return false;
             }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Closes the switch with the link.
-        /// </summary>
-        public virtual bool Close(Link link)
-        {
-            B = A = link;
 
             return true;
         }

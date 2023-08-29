@@ -1,7 +1,7 @@
 
 namespace RealWorldClasses.Electronics.Switches
 {
-    // three pin, second one for small power source to activate switch
+    /// <inheritdoc />
     public class SinglePoleDoubleThrow : Switch
     {
         #region Switch specific
@@ -11,25 +11,6 @@ namespace RealWorldClasses.Electronics.Switches
         #endregion
 
         public virtual Link C { get => _c; set => _c = value; }
-
-        /// <inheritdoc/>
-        public SinglePoleDoubleThrow() : base()
-        {
-        }
-
-        /// <inheritdoc/>
-        public SinglePoleDoubleThrow(Link a) : base(a)
-        {
-        }
-
-        /// <summary>
-        /// Single Pole Double Throw switch. Connects A to B.
-        /// For A to C connection use the <paramref name="a"/> <see cref="CloseAtoC"/>
-        /// </summary>
-        public SinglePoleDoubleThrow(Link a, Link c) : base(a)
-        {
-            _c = c;
-        }
 
         public virtual bool CloseAtoC(Link link)
         {
